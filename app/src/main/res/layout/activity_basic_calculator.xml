@@ -10,239 +10,195 @@
 
 
 <!-- Linear layout, oriented vertically, to act as the main parent container -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:gravity="center"
-              android:orientation="vertical"
-              android:weightSum="1"
-              tools:context=".BasicCalculator">
+<LinearLayout
+    android:id="@+id/buttonLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BasicCalculator"
+    android:weightSum="1">
 
     <!-- Basic TextView which acts as the primary display of the calculator -->
     <TextView android:id="@+id/displayView"
-        android:text="@string/displayTextView_cleared"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
-        android:layout_weight="0.35"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="45sp"
         android:textStyle="bold"
-        android:padding="6dp"/>
+        android:padding="6dp"
+        android:inputType="textMultiLine"
+        android:layout_weight="1"/>
 
     <!-- TableLayout which will act as a container for number and operator buttons -->
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_weight="0.65"
-        android:background="#ff000000"
-        android:padding="2dp">
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
 
         <!-- TableRow to hold number buttons 7, 8, 9, and addition operator button -->
         <TableRow android:id="@+id/numPad_rowOne"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_weight="0.20">
+                  android:layout_height="match_parent">
 
             <Button android:id="@+id/button_numberSeven"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberSeven"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"
+                    android:focusableInTouchMode="false"/>
 
             <Button android:id="@+id/button_numberEight"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberEight"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_numberNine"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberNine"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_addition"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_addition"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb9168f"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:textColor="#000000"
+                    android:background="#00ffffff"/>
 
         </TableRow>
 
         <!-- TableRow to hold number buttons 4, 5, 6, and subtraction operator button -->
         <TableRow android:id="@+id/numPad_rowTwo"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_weight="0.20">
+                  android:layout_height="match_parent">
 
             <Button android:id="@+id/button_numberFour"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberFour"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_numberFive"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberFive"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_numberSix"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberSix"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_subtraction"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_subtraction"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb9168f"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:textColor="#000000"
+                    android:background="#00ffffff"/>
         </TableRow>
 
         <!-- TableRow to hold number buttons 1, 2, 3, and multiplication operator button -->
         <TableRow android:id="@+id/numPad_rowThree"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_weight="0.20">
+                  android:layout_height="match_parent">
 
             <Button android:id="@+id/button_numberOne"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberOne"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_numberTwo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberTwo"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_numberThree"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberThree"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_multiplication"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_multiplication"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb9168f"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:textColor="#000000"
+                    android:background="#00ffffff"/>
 
         </TableRow>
 
         <!-- TableRow to hold sign change, decimal, division operator buttons and 0 number button -->
         <TableRow android:id="@+id/numPad_rowFour"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_weight="0.20">
+                  android:layout_height="match_parent">
 
             <Button android:id="@+id/button_signChange"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_signChange"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_numberZero"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_numberZero"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_decimal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_decimal"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_division"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_division"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb9168f"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:textColor="#000000"
+                    android:background="#00ffffff"/>
 
         </TableRow>
 
         <!-- TableRow to hold parenthesis, clear, delete, and equals operator buttons -->
         <TableRow android:id="@+id/numPad_rowFive"
                   android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_weight="0.20">
+                  android:layout_height="match_parent">
 
             <Button android:id="@+id/button_parenthesis"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_parenthesis"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb9168f" />
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:textColor="#000000"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_clear"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_clear"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb9168f"/>
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:textColor="#000000"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_backspace"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_backspace"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb9168f" />
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:textColor="#000000"
+                    android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_equals"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
                     android:text="@string/button_equals"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#ff0dc81b" />
+                    android:fontFamily="thin"
+                    android:textSize="30sp"
+                    android:textColor="#000000"
+                    android:background="#00ffffff"/>
 
         </TableRow>
 
