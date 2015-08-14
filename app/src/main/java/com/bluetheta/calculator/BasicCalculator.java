@@ -16,20 +16,13 @@ import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 public class BasicCalculator extends Activity {
 
-    private LinearLayout containerLayout;
-
-
-
+    // Magic integer that gives Stanley his square buttons
     private int buttonDimensions;
-
-
-
 
     // TextView holds the textViewDisplay view
     private TextView textViewDisplay;
@@ -46,23 +39,10 @@ public class BasicCalculator extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_calculator);
 
-
-
-
-
-
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         int width = size.x;
-        int height = size.y;
-
-
-
-
-
-
-        containerLayout = (LinearLayout)findViewById(R.id.buttonLayout);
         buttonDimensions = width / 4;
 
         // Create the TextView textViewDisplay object
@@ -199,16 +179,18 @@ public class BasicCalculator extends Activity {
                     //TODO Add sign change functionality
                     break;
                 case "(  )":
-                    if(textViewDisplay.getText().toString().equals("0")) {
+                    String userInput = textViewDisplay.getText().toString();
+
+                    if(userInput.equals("0")) {
                         textViewDisplay.setText("(");
                         parenthesisOpen = true;
                     }
                     else if(!parenthesisOpen) {
-                        textViewDisplay.setText(textViewDisplay.getText().toString().concat("("));
+                        textViewDisplay.setText(textViewDisplay.getText().toString() + "(");
                         parenthesisOpen = true;
                     }
                     else {
-                        textViewDisplay.setText(textViewDisplay.getText().toString().concat(")"));
+                        textViewDisplay.setText(textViewDisplay.getText().toString() + ")");
                     }
                     break;
                 case "DEL":
