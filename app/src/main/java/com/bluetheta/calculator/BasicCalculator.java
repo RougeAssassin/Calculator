@@ -220,7 +220,7 @@ public class BasicCalculator extends Activity {
                     String input = textViewDisplay.getText().toString();
                     String postfix = toPostfix(input);
                     int answer = computePostfix(postfix);
-                    textViewDisplay.setText(input + "\n=" + Integer.toString(answer));
+                    textViewDisplay.setText(input + "\n=" + Integer.toString(answer) + "\n");
                     break;
                 case "C":
                     textViewDisplay.setText("0");
