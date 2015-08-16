@@ -96,33 +96,43 @@ public class BasicCalculator extends Activity {
 
         // Create the operator Button objects and set their action listeners
         operatorButtons[0] = (Button)findViewById(R.id.button_decimal);
+        operatorButtons[0].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[0].setOnClickListener(new OperatorButtonClick());
 
         operatorButtons[1] = (Button)findViewById(R.id.button_addition);
+        operatorButtons[1].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[1].setOnClickListener(new OperatorButtonClick());
 
         operatorButtons[2] = (Button)findViewById(R.id.button_subtraction);
+        operatorButtons[2].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[2].setOnClickListener(new OperatorButtonClick());
 
         operatorButtons[3] = (Button)findViewById(R.id.button_multiplication);
+        operatorButtons[3].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[3].setOnClickListener(new OperatorButtonClick());
 
         operatorButtons[4] = (Button)findViewById(R.id.button_division);
+        operatorButtons[4].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[4].setOnClickListener(new OperatorButtonClick());
 
         operatorButtons[5] = (Button)findViewById(R.id.button_parenthesis);
+        operatorButtons[5].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[5].setOnClickListener(new OperatorButtonClick());
 
         operatorButtons[6] = (Button)findViewById(R.id.button_signChange);
+        operatorButtons[6].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[6].setOnClickListener(new OperatorButtonClick());
 
         operatorButtons[7] = (Button)findViewById(R.id.button_equals);
+        operatorButtons[7].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[7].setOnClickListener(new OperatorButtonClick());
 
         operatorButtons[8] = (Button)findViewById(R.id.button_backspace);
+        operatorButtons[8].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[8].setOnClickListener(new OperatorButtonClick());
 
         operatorButtons[9] = (Button)findViewById(R.id.button_clear);
+        operatorButtons[9].setLayoutParams(new TableRow.LayoutParams(buttonDimensions, buttonDimensions));
         operatorButtons[9].setOnClickListener(new OperatorButtonClick());
 
     }
