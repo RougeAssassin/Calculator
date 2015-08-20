@@ -1,6 +1,42 @@
+<!--
+    Android calculator application
+    Property of BlueTheta Software
+
+    Written by: Jeff Booth, Stephen Leer, and Stanley Rohrbacher
+    July, 2015
+
+    Version: Pre-Alpha
+-->
+
 <resources>
     <string name="app_name">Calculator</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!-- String to reset the display area when cleared and app is launched -->
+    <string name="displayTextView_cleared">0</string>
+
+    <!-- Strings to build number pad buttons with -->
+    <string name="button_numberNine">9</string>
+    <string name="button_numberEight">8</string>
+    <string name="button_numberSeven">7</string>
+    <string name="button_numberSix">6</string>
+    <string name="button_numberFive">5</string>
+    <string name="button_numberFour">4</string>
+    <string name="button_numberThree">3</string>
+    <string name="button_numberTwo">2</string>
+    <string name="button_numberOne">1</string>
+    <string name="button_numberZero">0</string>
+    <string name="button_decimal">.</string>
+
+    <!-- Strings to build operations buttons with -->
+    <string name="button_addition">+</string>
+    <string name="button_subtraction">-</string>
+    <string name="button_multiplication">*</string>
+    <string name="button_division">/</string>
+    <string name="button_equals">=</string>
+    <string name="button_clear">CLR</string>
+    <string name="button_signChange">+/-</string>
+    <string name="button_start_parenthesis">(</string>
+    <string name="button_end_parenthesis">)</string>
+    <string name="button_backspace">DEL</string>
 </resources>

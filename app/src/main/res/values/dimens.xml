@@ -1,5 +1,16 @@
+<!--
+    Android calculator application
+    Property of BlueTheta Software
+
+    Written by: Jeff Booth, Stephen Leer, and Stanley Rohrbacher
+    July, 2015
+
+    Version: Pre-Alpha
+-->
+
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
 </resources>

@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Android calculator application
+    Property of BlueTheta Software
+
+    Written by: Jeff Booth, Stephen Leer, and Stanley Rohrbacher
+    July, 2015
+
+    Version: Pre-Alpha
+-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bluetheta.calculator" >
 
