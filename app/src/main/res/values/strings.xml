@@ -34,8 +34,9 @@
     <string name="button_multiplication">*</string>
     <string name="button_division">/</string>
     <string name="button_equals">=</string>
-    <string name="button_clear">C</string>
+    <string name="button_clear">CLR</string>
     <string name="button_signChange">+/-</string>
-    <string name="button_parenthesis">(  )</string>
+    <string name="button_start_parenthesis">(</string>
+    <string name="button_end_parenthesis">)</string>
     <string name="button_backspace">DEL</string>
 </resources>

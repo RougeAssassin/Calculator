@@ -13,14 +13,12 @@
     <TextView android:id="@+id/displayView"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:gravity="end"
+              android:gravity="end|center_vertical"
               android:textAppearance="?android:attr/textAppearanceLarge"
               android:textSize="45sp"
-              android:textStyle="bold"
               android:padding="6dp"
               android:text="@string/button_numberZero"
               android:inputType="textMultiLine"
-              android:scrollbars="vertical"
               android:layout_weight="1"/>
 
 
@@ -42,14 +40,14 @@
                   android:layout_height="match_parent">
 
             <Button android:id="@+id/button_parenthesis"
-                    android:text="@string/button_parenthesis"
+                    android:text="@string/button_start_parenthesis"
                     android:fontFamily="thin"
                     android:textSize="30sp"
                     android:textColor="#000000"
                     android:background="#00ffffff"/>
 
             <Button android:id="@+id/button_clear"
-                    android:text="@string/button_clear"
+                    android:text="@string/button_end_parenthesis"
                     android:fontFamily="thin"
                     android:textSize="30sp"
                     android:textColor="#000000"
