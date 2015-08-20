@@ -29,7 +29,10 @@ public class  BasicCalculator extends Activity {
     // Magic integer that gives Stanley his square buttons
     private int buttonDimensions;
 
+    //Boolean that states when the calculator is in solved form.
     private boolean solved;
+
+    private int lastAnswer;
 
     // TextView holds the textViewDisplay view
     private TextView textViewDisplay;
@@ -142,7 +145,6 @@ public class  BasicCalculator extends Activity {
 
     }
 
-
     /**
      * OnClickListener class that edits the textViewDisplay TextView when a numeric Button object is
      * clicked.
@@ -182,51 +184,66 @@ public class  BasicCalculator extends Activity {
 
         public void onClick(View v) {
 
-            if(solved) {
-                textViewDisplay.setText("0");
-                solved = false;
-            }
-
             Button operatorClicked = (Button)v;
             String operatorSymbol = operatorClicked.getText().toString();
             String displayFieldText = textViewDisplay.getText().toString();
 
             switch (operatorSymbol) {
                 case "+":
-                    if (displayFieldText.equals("0")) {
+                    if (solved) {
+                        textViewDisplay.setText(Integer.toString(lastAnswer) + "+");
+                        solved = false;
+                    } else if (displayFieldText.equals("0")) {
                         textViewDisplay.setText("+");
                     } else {
                         textViewDisplay.setText(textViewDisplay.getText().toString()+ "+");
                     }
                     break;
                 case "-":
-                    if (displayFieldText.equals("0")) {
+                    if (solved) {
+                        textViewDisplay.setText(Integer.toString(lastAnswer) + "-");
+                        solved = false;
+                    } else if (displayFieldText.equals("0")) {
                         textViewDisplay.setText("-");
                     } else {
                         textViewDisplay.setText(textViewDisplay.getText().toString()+ "-");
                     }
                     break;
                 case "*":
-                    if (displayFieldText.equals("0")) {
+                    if (solved) {
+                        textViewDisplay.setText(Integer.toString(lastAnswer) + "*");
+                        solved = false;
+                    } else if (displayFieldText.equals("0")) {
                         textViewDisplay.setText("*");
                     } else {
                         textViewDisplay.setText(textViewDisplay.getText().toString()+ "*");
                     }
                     break;
                 case "/":
-                    if (displayFieldText.equals("0")) {
+                    if (solved) {
+                        textViewDisplay.setText(Integer.toString(lastAnswer) + "/");
+                        solved = false;
+                    } else if (displayFieldText.equals("0")) {
                         textViewDisplay.setText("/");
                     } else {
                         textViewDisplay.setText(textViewDisplay.getText().toString()+ "/");
                     }
                     break;
                 case ".":
+                    if(solved) {
+                        textViewDisplay.setText("0");
+                        solved = false;
+                    }
                     textViewDisplay.setText(textViewDisplay.getText().toString()+ ".");
                     break;
                 case "+/-":
                     //TODO Add sign change functionality
                     break;
                 case "(":
+                    if(solved) {
+                        textViewDisplay.setText("0");
+                        solved = false;
+                    }
                     if (displayFieldText.equals("0")) {
                         textViewDisplay.setText("(");
                     } else {
@@ -234,14 +251,21 @@ public class  BasicCalculator extends Activity {
                     }
                     break;
                 case ")":
+                    if(solved) {
+                        textViewDisplay.setText("0");
+                        solved = false;
+                    }
                     if (displayFieldText.equals("0")) {
                         textViewDisplay.setText(operatorClicked.getText());
                     } else {
                         textViewDisplay.setText(textViewDisplay.getText().toString()+ ")");
                     }
-
                     break;
                 case "DEL":
+                    if(solved) {
+                        textViewDisplay.setText("0");
+                        solved = false;
+                    }
                     StringBuilder currentDisplay = new StringBuilder(textViewDisplay.getText().toString());
                     if(textViewDisplay.getText().toString().length() == 1)
                         textViewDisplay.setText("0");
@@ -251,11 +275,14 @@ public class  BasicCalculator extends Activity {
                     }
                     break;
                 case "=":
-                    String input = textViewDisplay.getText().toString();
-                    String postfix = toPostfix(input);
-                    int answer = computePostfix(postfix);
-                    textViewDisplay.setText(input + "\n=" + Integer.toString(answer));
-                    solved=true;
+                    if(!solved) {
+                        String input = textViewDisplay.getText().toString();
+                        String postfix = toPostfix(input);
+                        int answer = computePostfix(postfix);
+                        textViewDisplay.setText(input + "\n=" + Integer.toString(answer));
+                        solved=true;
+                        lastAnswer = answer;
+                    }
                     break;
                 case "C":
                     textViewDisplay.setText("0");
